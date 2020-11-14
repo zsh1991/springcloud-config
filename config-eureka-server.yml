@@ -23,6 +23,9 @@ eureka:
       serviceUrl:
         #单机
         defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka     #Eureka服务器地址，注册服务都需要依赖这个地址
+security:
+  basic:
+    enabled: false
 
 ---
 
@@ -44,4 +47,6 @@ eureka:
       serviceUrl:
         #单机
         defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka     #Eureka服务器地址，注册服务都需要依赖这个地址
-
+security:
+  basic:
+    enabled: false
