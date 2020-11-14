@@ -1,0 +1,17 @@
+spring:
+  profiles:
+  active:
+  - dev
+
+---
+spring:
+  profiles: dev     #开发环境
+  application:
+  name: springcloud-config-dev
+
+---
+spring:
+  profiles: test
+  application: springcloud-config-test
+
+#记得保存为UTF-8
