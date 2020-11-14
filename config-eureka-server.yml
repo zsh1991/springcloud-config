@@ -1,0 +1,40 @@
+#服务端口
+server:
+  port: 9091
+
+spring:
+  profiles: dev
+  application:
+    name: eureka-server-config
+
+eureka:
+  instance:
+    hostname: eureka9091.com
+  client:
+      register-with-eureka: false    #声明是否将自己的信息注册到Eureka服务器上
+      fetch-registry: false    #是否到Eureka服务器中抓取注册信息
+      serviceUrl:
+        #单机
+        defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka     #Eureka服务器地址，注册服务都需要依赖这个地址
+
+---
+
+#服务端口
+server:
+  port: 9091
+
+spring:
+  profiles: test
+  application:
+    name: eureka-server-config
+
+eureka:
+  instance:
+    hostname: eureka9091.com
+  client:
+      register-with-eureka: false    #声明是否将自己的信息注册到Eureka服务器上
+      fetch-registry: false    #是否到Eureka服务器中抓取注册信息
+      serviceUrl:
+        #单机
+        defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka     #Eureka服务器地址，注册服务都需要依赖这个地址
+
