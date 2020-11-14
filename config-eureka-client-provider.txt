@@ -1,0 +1,66 @@
+spring:
+  profiles:
+    active:
+    - dev
+
+---
+
+server:
+  port: 9092
+
+spring:
+  profiles: dev
+  application:
+    name: eureka-config-client-provider   #对外暴露的服务名称
+
+eureka:
+  client:
+    register-with-eureka: true   #需要将自己的服务注册到eureka上
+    fetch-registry: true      #允许Eureka服务器抓取当前的注册信息
+    service-url:
+      #单机
+      defaultZone: http://eureka9091:9091/eureka   #注册中心地址
+
+  instance:
+    instance-id: eureka-config-client-provider  #自定义服务名称信息
+    prefer-ip-address: true    #访问路径可以显示IP地址
+
+#服务的描述信息
+info:
+  app.name: ${spring.application.name}
+  author.name: zsh
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+  company.name: www.zsh.com
+  server.port: ${server.port}
+
+---
+
+server:
+  port: 9092
+
+spring:
+  profiles: test
+  application:
+    name: eureka-config-client-provider   #对外暴露的服务名称
+
+eureka:
+  client:
+    register-with-eureka: true   #需要将自己的服务注册到eureka上
+    fetch-registry: true      #允许Eureka服务器抓取当前的注册信息
+    service-url:
+      #单机
+      defaultZone: http://eureka9091:9091/eureka   #注册中心地址
+
+  instance:
+    instance-id: eureka-config-client-provider  #自定义服务名称信息
+    prefer-ip-address: true    #访问路径可以显示IP地址
+
+#服务的描述信息
+info:
+  app.name: ${spring.application.name}
+  author.name: zsh
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+  company.name: www.zsh.com
+  server.port: ${server.port}
