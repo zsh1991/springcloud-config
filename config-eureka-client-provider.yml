@@ -19,7 +19,7 @@ eureka:
     fetch-registry: true      #允许Eureka服务器抓取当前的注册信息
     service-url:
       #单机
-      defaultZone: http://eureka9091:9091/eureka   #注册中心地址
+      defaultZone: http://eureka9091.com:9091/eureka   #注册中心地址
 
   instance:
     instance-id: eureka-config-client-provider  #自定义服务名称信息
@@ -50,7 +50,7 @@ eureka:
     fetch-registry: true      #允许Eureka服务器抓取当前的注册信息
     service-url:
       #单机
-      defaultZone: http://eureka9091:9091/eureka   #注册中心地址
+      defaultZone: http://eureka9091.com:9091/eureka   #注册中心地址
 
   instance:
     instance-id: eureka-config-client-provider  #自定义服务名称信息
